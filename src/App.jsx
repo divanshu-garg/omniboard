@@ -8,7 +8,7 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Ka
 import { useStateContext } from "./contexts/ContextProvider";
 
 function App() {
-  const activeMenu = useStateContext();
+  const {activeMenu} = useStateContext();
 
   return (
     <div>
@@ -25,23 +25,26 @@ function App() {
               </button>
             </TooltipComponent>
           </div>
-          {activeMenu ? (
+          <div className="z-50">
+          {/* {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
               <Sidebar/>
             </div>
           ) : (
             <div className="w-0 dark:bg-secondary-dark-bg bg-white"><Sidebar/></div>
-          )}
+          )} */}
+          {activeMenu && <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
+              <Sidebar/>
+            </div>}
+          </div>
           <div
-            className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
-              activeMenu ? "md:m1-72" : "flex-2"
+            className={`dark:bg-main-bg z-40 bg-main-bg min-h-screen w-full ${
+              activeMenu ? "md:ml-72" : "flex-2"
             }`}
           >
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
               <Navbar/>
             </div>
-          </div>
-
           <div>
             <Routes>
               {/* dashboard */}
@@ -70,6 +73,7 @@ function App() {
               <Route path='/stacked' element={<Stacked/>} />
             </Routes>
           </div>
+        </div>
         </div>
       </BrowserRouter>
     </div>

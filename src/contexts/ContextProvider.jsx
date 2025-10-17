@@ -11,9 +11,16 @@ const initialState = {
 
 export const ContextProvider = (({children})=> {
     const [activeMenu, setActiveMenu] = useState(true);
+    const [isClicked, setIsClicked] = useState(initialState);
+   
+    // when someone clicks an icon on Navbar I'll use handleClick to open that part of navbar
+    const handleClick = (clicked)=> {
+    setIsClicked({...initialState, [clicked]:true})
+  }
 
+  const [screenSize, setScreenSize] = useState(undefined);
     return <StateContext.Provider
-    value={{activeMenu, setActiveMenu}}
+    value={{activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize}}
     >
         {children}
     </StateContext.Provider>
