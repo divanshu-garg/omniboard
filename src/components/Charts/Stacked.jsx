@@ -2,7 +2,6 @@ import React from "react";
 import {
   ChartComponent,
   SeriesCollectionDirective,
-  SegmentDirective,
   Inject,
   Legend,
   Category,
