@@ -8,14 +8,14 @@ import { Ecommerce, Orders, Calendar, Employees, Pyramid, Customers, Kanban, Are
 import { useStateContext } from "./contexts/ContextProvider";
 
 function App() {
-  const {activeMenu, showThemeSettings, setShowThemeSettings, currentColor, currentMode} = useStateContext();
+  const {activeMenu, showThemeSettings, setShowThemeSettings, currentColor, currentMode, isClicked} = useStateContext();
 
   return (
     <div className={currentMode === "Dark" ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-            <TooltipComponent content="settings" position="top">
+            { !isClicked.cart && <TooltipComponent content="settings" position="top">
               <button
                 type="button"
                 className="text-3xl p-3 text-white hover:drop-shadow-xl hover:bg-light-gray"
@@ -24,7 +24,7 @@ function App() {
               >
                 <FiSettings />
               </button>
-            </TooltipComponent>
+            </TooltipComponent>}
           </div>
           <div className="z-50">
           {/* {activeMenu ? (
