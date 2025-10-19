@@ -356,8 +356,8 @@ export const ColorMappingPrimaryYAxis = {
 
 export const FinancialPrimaryXAxis = {
   valueType: 'DateTime',
-  minimum: new Date('2016, 12, 31'),
-  maximum: new Date('2017, 9, 30'),
+  minimum: new Date('2016, 1, 1'),
+  maximum: new Date('2017, 5, 30'),
   crosshairTooltip: { enable: true },
   majorGridLines: { width: 0 },
 };

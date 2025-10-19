@@ -10,6 +10,7 @@ import {
   Zoom,
   Crosshair,
   Logarithmic,
+  Legend
 } from "@syncfusion/ej2-react-charts";
 
 import { Header } from "../../components";
@@ -21,15 +22,19 @@ import {
 } from "../../data/dummy";
 import { useStateContext } from "../../contexts/ContextProvider";
 
-const date1 = new Date("2017, 1, 1");
-
 function filterValue(value) {
-  if (value.x >= date1) {
-    // eslint-disable-next-line no-sequences
-    return value.x, value.high, value.low;
+  const date1 = new Date("2016, 1, 1").getFullYear();
+  const newVal = value.x.getFullYear()
+  // console.log("date:", date1);
+  // console.log("value.x:",newVal);
+  if(newVal >= date1){
+    // return value.x, value.high, value.low;
+    return value;
   }
 }
 const returnValue = financialChartData.filter(filterValue);
+// console.log("return val:", returnValue);
+
 
 const Financial = () => {
   const { currentMode } = useStateContext();
@@ -56,6 +61,7 @@ const Financial = () => {
               DateTime,
               Logarithmic,
               Crosshair,
+              Legend,
               Zoom,
             ]}
           />
