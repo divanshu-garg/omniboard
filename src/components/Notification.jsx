@@ -7,7 +7,7 @@ import { Button } from "./index";
 const Notification = () => {
   const { currentColor, setIsClicked } = useStateContext();
   return (
-    <div className="nav-item absolute right-5 md:right-40 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
+    <div className="nav-item absolute shadow-2xl right-5 md:right-40 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
       <div className="justify-between flex items-center mb-2">
           <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2">
             Notifications

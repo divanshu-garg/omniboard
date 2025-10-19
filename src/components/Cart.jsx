@@ -8,7 +8,7 @@ const Cart = () => {
   const { isClicked, setIsClicked, currentColor } = useStateContext();
   
   return (
-    <>
+    <div className="shadow-2xl">
       {/* Backdrop overlay */}
       {isClicked.cart && (
         <div
@@ -108,7 +108,7 @@ const Cart = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
