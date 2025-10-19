@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { FiSettings } from "react-icons/fi";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
-import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Line } from "./pages";
+import { Ecommerce, Orders, Calendar, Employees, Pyramid, Customers, Kanban, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Line } from "./pages";
 import { useStateContext } from "./contexts/ContextProvider";
 
 function App() {
@@ -73,7 +73,7 @@ function App() {
               <Route path='/financial' element={<Financial/>} />
               <Route path='/color-mapping' element={<ColorMapping/>} />
               <Route path='/pyramid' element={<Pyramid/>} />
-              <Route path='/stacked' element={<Stacked/>} />
+              {/* <Route path='/stacked' element={<Stacked/>} /> */}
             </Routes>
           </div>
         </div>
