@@ -31,7 +31,7 @@ export const ContextProvider = (({children})=> {
 
     // when someone clicks an icon on Navbar I'll use handleClick to open that part of navbar
     const handleClick = (clicked)=> {
-    setIsClicked({...initialState, [clicked]:true})
+    setIsClicked({...initialState, ...clicked})
   }
 
   const [screenSize, setScreenSize] = useState(undefined);

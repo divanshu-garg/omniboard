@@ -64,28 +64,28 @@ const Navbar = () => {
       <div className="flex">
         <NavButton
           title="Cart"
-          customFunction={() => handleClick("cart")}
+          customFunction={() => handleClick({cart:!(isClicked.cart)})}
           color={currentColor}
           icon={<FiShoppingCart />}
         />
         <NavButton
           title="Chat"
           dotColor="#03C9D7"
-          customFunction={() => handleClick("chat")}
+          customFunction={() => handleClick({chat:!(isClicked.chat)})}
           color={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton
           title="Notifications"
           dotColor="#03C9D7"
-          customFunction={() => handleClick("notification")}
+          customFunction={() => handleClick({notification:!(isClicked.notification)})}
           color={currentColor}
           icon={<RiNotification3Line />}
         />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            onClick={() => handleClick("userProfile")}
+            onClick={() => handleClick({userProfile:!(isClicked.userProfile)})}
           >
             <img src={avatar} className="rounded-full h-8 w-8" />
             <p>
